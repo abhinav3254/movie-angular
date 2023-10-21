@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   movies: Movie[] = [];
 
-  constructor(private homeService: HomeService) { }
+  constructor(private homeService: HomeService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.homeService.getMovies().subscribe(
@@ -20,7 +22,19 @@ export class HomeComponent implements OnInit {
     );
   }
 
+  openDialog(movie: Movie) {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { movieData: movie } // Pass your movie data here
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }
+
+
 
 export interface Movie {
   id: number

@@ -13,6 +13,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     LoginComponent,
     NavBarComponent,
     HomeComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
