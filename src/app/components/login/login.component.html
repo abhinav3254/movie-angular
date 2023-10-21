@@ -1,1 +1,28 @@
-<p>login works!</p>
+<div class="card main-div">
+    <div class="left">
+        <img src="assets/movie.svg" alt="">
+    </div>
+    <div class="right">
+        <form>
+            <div class="card form-card">
+                <p class="login">Login</p>
+                <p>Doesn't have an account yet?<a href="/signup">Sign up</a></p>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input [(ngModel)]="login.username" name="username" type="text" placeholder="your username"
+                        class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Password</label>
+                    <input [(ngModel)]="login.password" name="password" type="password"
+                        placeholder="Enter 6 character or more" class="form-control" id="exampleInputPassword1">
+                </div>
+
+                <div class="center">
+                    <button (click)="submitForm()" type="submit" class="btn btn-primary">Submit</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>

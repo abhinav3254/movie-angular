@@ -1,0 +1,62 @@
+* {
+    font-family: 'Ubuntu';
+}
+
+.main-div {
+    margin: 1rem;
+    display: flex;
+    flex-direction: row;
+    height: 95vh;
+}
+
+.left {
+    width: 50%;
+    margin: auto;
+}
+
+.left img {
+    width: 100%;
+}
+
+.right {
+    width: 50%;
+    margin: auto;
+}
+
+.form-card {
+    width: 75%;
+    margin: auto;
+    padding: 10%;
+    border-radius: 1rem;
+}
+
+.center {
+    text-align: center;
+}
+
+input {
+    height: 3rem;
+}
+
+.login {
+    font-weight: 900;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 600px) {
+    .main-div {
+        flex-direction: column;
+        margin: 0.5rem;
+    }
+
+
+    .left {
+        width: 100%;
+        margin: auto;
+    }
+
+    .right {
+        width: 100%;
+        margin: auto;
+    }
+}
