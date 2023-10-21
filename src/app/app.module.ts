@@ -12,13 +12,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavBarComponent,
-    HomeComponent
+    HomeComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

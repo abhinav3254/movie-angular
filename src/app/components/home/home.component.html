@@ -1,3 +1,18 @@
-<p *ngFor="let movie of movies">
-    <img src="{{movie.thumbnail}}" alt="">
-</p>
+<app-spinner *ngIf="movies.length<1"></app-spinner>
+<!-- 
+<div *ngIf="movies.length>1">
+    <p *ngFor="let movie of movies">
+        <img src="{{movie.thumbnail}}" alt="">
+    </p>
+</div> -->
+
+<div class="container text-center" *ngIf="movies.length>1">
+    <div class="row">
+        <div class="col" *ngFor="let movie of movies">
+            <div class="card card-grid">
+                <img src="{{movie.thumbnail}}" alt="">
+                <p class="movie-title">{{movie.title}}</p>
+            </div>
+        </div>
+    </div>
+</div>
