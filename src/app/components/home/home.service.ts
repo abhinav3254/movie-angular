@@ -9,8 +9,8 @@ export class HomeService {
 
   constructor(private http: HttpClient) { }
 
-  public getMovies(): Observable<any> {
-    const url = 'http://localhost:9091/movie/';
+  public getMovies(page: number, size: number): Observable<any> {
+    const url = 'http://localhost:9091/movie/?page=' + page + '&size=' + size;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
       Authorization: `Bearer ` + localStorage.getItem('token'),

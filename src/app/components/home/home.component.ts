@@ -10,19 +10,19 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class HomeComponent implements OnInit {
 
-  movies: Movie[] = [];
+  movies: Root | undefined;
 
   constructor(private homeService: HomeService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-    this.homeService.getMovies().subscribe(
+    this.homeService.getMovies(0, 20).subscribe(
       (data) => {
-        this.movies = data as Movie[];
+        this.movies = data as Root;
       }
     );
   }
 
-  openDialog(movie: Movie) {
+  openDialog(movie: Content) {
     const dialogRef = this.dialog.open(DialogComponent, {
       data: { movieData: movie } // Pass your movie data here
     });
@@ -35,17 +35,50 @@ export class HomeComponent implements OnInit {
 }
 
 
-
-export interface Movie {
-  id: number
-  title: string
-  year: number
-  cast: string[]
-  genres: string[]
-  href: string
-  extract: string
-  thumbnail: string
-  thumbnailWidth: number
-  thumbnailHeight: number
+export interface Root {
+  content: Content[];
+  pageable: Pageable;
+  last: boolean;
+  totalPages: number;
+  totalElements: number;
+  first: boolean;
+  size: number;
+  number: number;
+  sort: Sort2;
+  numberOfElements: number;
+  empty: boolean;
 }
 
+export interface Content {
+  id: number;
+  title: string;
+  year: number;
+  cast: string;
+  genres: string;
+  href: string;
+  extract: string;
+  thumbnail: string;
+  thumbnail_width: string;
+  thumbnail_height: string;
+}
+
+export interface Pageable {
+  sort: Sort;
+  offset: number;
+  pageNumber: number;
+  pageSize: number;
+  paged: boolean;
+  unpaged: boolean;
+}
+
+export interface Sort {
+  empty: boolean;
+  unsorted: boolean;
+  sorted: boolean;
+}
+
+export interface Sort2 {
+  empty: boolean;
+  unsorted: boolean;
+  sorted: boolean;
+}

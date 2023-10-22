@@ -1,10 +1,15 @@
-<app-spinner *ngIf="movies.length<1"></app-spinner>
+<!-- <app-spinner *ngIf="movies.length<1"></app-spinner> -->
 <app-carousel></app-carousel>
+
+<mat-paginator [length]="990" [pageSize]="20" [pageSizeOptions]="[20, 40]" aria-label="Select page">
+</mat-paginator>
+
+
 <div class="below-carousel">
 
-    <div class="container text-center" *ngIf="movies.length>1">
+    <div class="container text-center">
         <div class="row">
-            <div class="col" *ngFor="let movie of movies" (click)="openDialog(movie)">
+            <div class="col" *ngFor="let movie of movies?.content" (click)="openDialog(movie)">
                 <div class="card card-grid">
                     <img src="{{movie.thumbnail}}" alt="">
                     <p class="movie-title">{{movie.title}}</p>
