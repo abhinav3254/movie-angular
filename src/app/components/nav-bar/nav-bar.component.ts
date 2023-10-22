@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class NavBarComponent {
 
+  searchText: string = '';
+
+  searchIt(searchText: string) {
+    alert(searchText);
+  }
 }

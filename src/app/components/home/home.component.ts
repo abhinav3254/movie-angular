@@ -3,6 +3,7 @@ import { HomeService } from './home.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { PageEvent } from '@angular/material/paginator';
+import { DatasharingserviceService } from './datasharingservice.service';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,9 @@ export class HomeComponent implements OnInit {
   movies: Root | undefined;
   length: any;
 
-  constructor(private homeService: HomeService, public dialog: MatDialog) { }
+  searchText: string = '';
+
+  constructor(private homeService: HomeService, public dialog: MatDialog, private dataSharingService: DatasharingserviceService) { }
 
   ngOnInit(): void {
     this.homeService.getMovies(0, 20).subscribe(
@@ -24,6 +27,19 @@ export class HomeComponent implements OnInit {
         this.length = this.movies.totalElements;
       }
     );
+    // for search bar
+    // Subscribe to changes in the search text
+    this.dataSharingService.searchText$.subscribe((text) => {
+      this.searchText = text;
+      // console.log('from home search will be :- ' + this.searchText)
+      this.homeService.searchMovie(this.searchText, 0, 20).subscribe(
+        (data) => {
+          this.movies = data as Root;
+          // Set the 'length' property to 'pagesize_api' after data loads.
+          this.length = this.movies.totalElements;
+        }
+      )
+    });
   }
 
   pageIndex = 0;
