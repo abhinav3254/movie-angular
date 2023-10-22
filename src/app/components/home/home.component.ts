@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HomeService } from './home.service';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class HomeComponent implements OnInit {
 
   movies: Root | undefined;
+  length: any;
 
   constructor(private homeService: HomeService, public dialog: MatDialog) { }
 
@@ -18,9 +20,32 @@ export class HomeComponent implements OnInit {
     this.homeService.getMovies(0, 20).subscribe(
       (data) => {
         this.movies = data as Root;
+        // Set the 'length' property to 'pagesize_api' after data loads.
+        this.length = this.movies.totalElements;
       }
     );
   }
+
+  pageIndex = 0;
+  pageSize = 20;
+
+
+  onPageChange(event: PageEvent) {
+    this.pageIndex = event.pageIndex;
+    this.homeService.getMovies(this.pageIndex, 20).subscribe(
+      (data) => {
+        this.movies = data as Root;
+      }
+    );
+    // You can also implement any logic here based on the new pageIndex.
+  }
+
+  onPageSizeChange(event: any) {
+    this.pageSize = event.pageSize;
+    console.log(this.pageSize);
+    // You can also implement any logic here based on the new pageSize.
+  }
+
 
   openDialog(movie: Content) {
     const dialogRef = this.dialog.open(DialogComponent, {

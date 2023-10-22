@@ -1,8 +1,10 @@
 <!-- <app-spinner *ngIf="movies.length<1"></app-spinner> -->
 <app-carousel></app-carousel>
 
-<mat-paginator [length]="990" [pageSize]="20" [pageSizeOptions]="[20, 40]" aria-label="Select page">
-</mat-paginator>
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[20, 40]" aria-label="Select page"
+    (page)="onPageChange($event)" (pageSize)="onPageSizeChange($event)"></mat-paginator>
+
+
 
 
 <div class="below-carousel">
