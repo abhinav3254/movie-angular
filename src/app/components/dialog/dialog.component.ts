@@ -9,6 +9,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DialogComponent {
 
   casts: any[] = [];
+  genres: any[] = [];
 
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: Root) { }
@@ -16,12 +17,17 @@ export class DialogComponent {
   ngOnInit() {
     // Access the passed data
     const jsonString = this.data.movieData.cast;
-    // const castList: string[] = this.data.movieData.cast.split(',');
-    // console.log(castList.length);
+
     const cleanString = jsonString.slice(1, -1);
     const stringArray = cleanString.split('","');
     this.casts = stringArray;
-    console.log(stringArray.length);
+    // console.log(stringArray.length);
+
+    const jsonStringGenres = this.data.movieData.genres;
+    const cleanStringGenres = jsonStringGenres.slice(1, -1);
+    const stringArrayGenres = cleanStringGenres.split('","');
+
+    this.genres = stringArrayGenres;
 
   }
 

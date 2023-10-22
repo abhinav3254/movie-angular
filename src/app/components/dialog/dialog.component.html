@@ -8,14 +8,20 @@
 
             </div>
             <p>Release Year :- {{data.movieData.year}}</p>
-            <!-- <p>casts:- {{data.movieData.cast}}</p> -->
-            <p>plot :- {{data.movieData.extract}}</p>
-            <p>genres :- {{data.movieData.genres}}</p>
+            <p class="plot">{{data.movieData.extract}}</p>
             <hr>
             <h4>casts</h4>
             <mat-chip-listbox class="chips-main-upper" aria-label="Fish selection" *ngFor="let c of casts">
                 <div class="chips-main">
                     <mat-chip-option class="element" selected color="warn">{{c}}</mat-chip-option>
+                </div>
+            </mat-chip-listbox>
+
+            <hr>
+            <h4>genres</h4>
+            <mat-chip-listbox class="chips-main-upper" aria-label="Fish selection" *ngFor="let c of genres">
+                <div class="chips-main">
+                    <mat-chip-option class="element" selected>{{c}}</mat-chip-option>
                 </div>
             </mat-chip-listbox>
 
