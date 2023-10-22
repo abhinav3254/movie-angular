@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { PageEvent } from '@angular/material/paginator';
 import { DatasharingserviceService } from './datasharingservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,9 @@ export class HomeComponent implements OnInit {
 
   searchText: string = '';
 
-  constructor(private homeService: HomeService, public dialog: MatDialog, private dataSharingService: DatasharingserviceService) { }
+  constructor(private homeService: HomeService, public dialog: MatDialog, private dataSharingService: DatasharingserviceService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.homeService.getMovies(0, 20).subscribe(
@@ -25,6 +28,13 @@ export class HomeComponent implements OnInit {
         this.movies = data as Root;
         // Set the 'length' property to 'pagesize_api' after data loads.
         this.length = this.movies.totalElements;
+      },
+      (error) => {
+        if (error.status === 200) {
+        } else if (error.status == 401) {
+          alert('session expired');
+          this.router.navigate(['/']);
+        }
       }
     );
     // for search bar
@@ -37,6 +47,13 @@ export class HomeComponent implements OnInit {
           this.movies = data as Root;
           // Set the 'length' property to 'pagesize_api' after data loads.
           this.length = this.movies.totalElements;
+        },
+        (error) => {
+          if (error.status === 200) {
+          } else if (error.status == 401) {
+            alert('session expired');
+            this.router.navigate(['/']);
+          }
         }
       )
     });

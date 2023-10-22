@@ -29,4 +29,24 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
 }
+
+.chips-main-upper {
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+    margin: 1rem;
+
+}
+
+.element {
+    display: flex;
+    flex-direction: row;
+}
+
+/* 
+.chips-main {
+    border: 1px solid black;
+    display: inline-block;
+} */
