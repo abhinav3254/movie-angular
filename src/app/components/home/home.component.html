@@ -1,8 +1,6 @@
 <!-- <app-spinner *ngIf="movies.length<1"></app-spinner> -->
 <app-carousel></app-carousel>
 
-
-
 <div class="main-div">
 
     <!-- for year -->
@@ -30,7 +28,12 @@
 
     <div class="card below-carousel">
 
-        <div class="container text-center">
+        <div class="not-found" *ngIf="movies?.content?.length==0">
+            <h1>Nothing Found</h1>
+            <img src="assets/not-found.svg" alt="">
+        </div>
+
+        <div class="container text-center" *ngIf="movies?.content?.length!=0">
             <div class="row">
                 <div class="col" *ngFor="let movie of movies?.content" (click)="openDialog(movie)">
                     <div class="card card-grid">

@@ -43,3 +43,19 @@
     margin: 2px;
     padding: 0.1rem 1rem;
 }
+
+.not-found {
+    text-align: center;
+    width: 80%;
+    height: 80%;
+    margin: 20% auto;
+}
+
+.not-found img {
+    width: 100%;
+    height: 80%;
+}
+
+.not-found h1 {
+    font-size: 2rem;
+}
