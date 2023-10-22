@@ -18,6 +18,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 
 @NgModule({
@@ -41,7 +43,8 @@ import { MatChipsModule } from '@angular/material/chips';
     HttpClientModule,
     MatDialogModule,
     MatPaginatorModule,
-    MatChipsModule
+    MatChipsModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent]

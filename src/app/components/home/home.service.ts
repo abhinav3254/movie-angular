@@ -27,4 +27,13 @@ export class HomeService {
     return this.http.get(url, { headers: headers });
   }
 
+  public searchMovieByYear(year: string, page: number, size: number): Observable<any> {
+    const url = 'http://localhost:9091/movie/find/' + year + '?page=' + page + '&size=' + size;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ` + localStorage.getItem('token'),
+    });
+    return this.http.get(url, { headers: headers });
+  }
+
 }

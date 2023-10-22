@@ -5,6 +5,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { PageEvent } from '@angular/material/paginator';
 import { DatasharingserviceService } from './datasharingservice.service';
 import { Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
+  favoriteYear: string = '';
+  years: string[] = ['all', '2020', '2021', '2022', '2023'];
+
+  clickedRadio(year: string) {
+    if (year.match('all')) {
+      this.getAllMovies();
+    } else {
+      this.getMovieByYear(year);
+    }
+  }
+
+
 
   movies: Root | undefined;
   length: any;
@@ -23,20 +37,11 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.homeService.getMovies(0, 20).subscribe(
-      (data) => {
-        this.movies = data as Root;
-        // Set the 'length' property to 'pagesize_api' after data loads.
-        this.length = this.movies.totalElements;
-      },
-      (error) => {
-        if (error.status === 200) {
-        } else if (error.status == 401) {
-          alert('session expired');
-          this.router.navigate(['/']);
-        }
-      }
-    );
+
+    // get all movies
+
+    this.getAllMovies();
+
     // for search bar
     // Subscribe to changes in the search text
     this.dataSharingService.searchText$.subscribe((text) => {
@@ -57,6 +62,44 @@ export class HomeComponent implements OnInit {
         }
       )
     });
+  }
+
+  // get all movies
+
+  public getAllMovies() {
+    this.homeService.getMovies(0, 20).subscribe(
+      (data) => {
+        this.movies = data as Root;
+        // Set the 'length' property to 'pagesize_api' after data loads.
+        this.length = this.movies.totalElements;
+      },
+      (error) => {
+        if (error.status === 200) {
+        } else if (error.status == 401) {
+          alert('session expired');
+          this.router.navigate(['/']);
+        }
+      }
+    );
+  }
+
+  // get movies by year
+  public getMovieByYear(year: string) {
+
+    this.homeService.searchMovieByYear(year, 0, 20).subscribe(
+      (data) => {
+        this.movies = data as Root;
+        this.length = this.movies.totalElements;
+      },
+      (error) => {
+        if (error.status === 200) {
+        } else if (error.status == 401) {
+          alert('session expired');
+          this.router.navigate(['/']);
+        }
+      }
+    )
+
   }
 
   pageIndex = 0;

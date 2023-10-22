@@ -3,16 +3,31 @@
 
 
 
+<div class="main-div">
 
+    <!-- for year -->
 
-<div class="card below-carousel">
+    <div class="card radio-card">
+        <label id="example-radio-group-label">Pick your favorite season</label>
+        <mat-radio-group aria-labelledby="example-radio-group-label"
+            class="example-radio-group example-radio-group-custom" [(ngModel)]="favoriteYear">
+            <mat-radio-button class="example-radio-button example-radio-button-custom" *ngFor="let year of years"
+                [value]="year" (change)="clickedRadio(year)">
+                {{year}}
+            </mat-radio-button>
+        </mat-radio-group>
+        <div>Your favorite year is: {{favoriteYear}}</div>
+    </div>
 
-    <div class="container text-center">
-        <div class="row">
-            <div class="col" *ngFor="let movie of movies?.content" (click)="openDialog(movie)">
-                <div class="card card-grid">
-                    <img src="{{movie.thumbnail}}" alt="">
-                    <p class="movie-title">{{movie.title}}</p>
+    <div class="card below-carousel">
+
+        <div class="container text-center">
+            <div class="row">
+                <div class="col" *ngFor="let movie of movies?.content" (click)="openDialog(movie)">
+                    <div class="card card-grid">
+                        <img src="{{movie.thumbnail}}" alt="">
+                        <p class="movie-title">{{movie.title}}</p>
+                    </div>
                 </div>
             </div>
         </div>
