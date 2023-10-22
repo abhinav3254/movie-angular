@@ -1,13 +1,11 @@
 <!-- <app-spinner *ngIf="movies.length<1"></app-spinner> -->
 <app-carousel></app-carousel>
 
-<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[20]" aria-label="Select page"
-    (page)="onPageChange($event)" (pageSize)="onPageSizeChange($event)"></mat-paginator>
 
 
 
 
-<div class="below-carousel">
+<div class="card below-carousel">
 
     <div class="container text-center">
         <div class="row">
@@ -20,3 +18,7 @@
         </div>
     </div>
 </div>
+
+
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[20]" aria-label="Select page"
+    (page)="onPageChange($event)" (pageSize)="onPageSizeChange($event)"></mat-paginator>
