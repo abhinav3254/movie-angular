@@ -1,7 +1,7 @@
 <!-- <app-spinner *ngIf="movies.length<1"></app-spinner> -->
 <app-carousel></app-carousel>
 
-<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[20, 40]" aria-label="Select page"
+<mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[20]" aria-label="Select page"
     (page)="onPageChange($event)" (pageSize)="onPageSizeChange($event)"></mat-paginator>
 
 
