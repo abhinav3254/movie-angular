@@ -15,6 +15,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     NavBarComponent,
     HomeComponent,
     SpinnerComponent,
-    DialogComponent
+    DialogComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
