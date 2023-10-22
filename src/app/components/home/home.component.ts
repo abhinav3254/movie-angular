@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
+  // for year
   favoriteYear: string = '';
   years: string[] = ['all', '2020', '2021', '2022', '2023'];
 
@@ -24,6 +25,61 @@ export class HomeComponent implements OnInit {
       this.getMovieByYear(year);
     }
   }
+
+  // for generes
+  favoriteGenres: string = '';
+  movieGenres = [
+    "All",
+    "Action",
+    "Adventure",
+    "Animation",
+    "Comedy",
+    "Crime",
+    "Drama",
+    "Fantasy",
+    "Horror",
+    "Mystery",
+    "Romance",
+    "Science Fiction",
+    "Thriller",
+    "Family",
+    "Western",
+    "Historical",
+    "War",
+    "Music",
+    "Documentary",
+    "Superhero",
+    "Fantasy Adventure"
+  ];
+
+
+  clickedRadioGenres(generes: string) {
+    // console.log(generes);
+    if (generes.match('All')) {
+      this.getAllMovies();
+    } else {
+      this.searchMovieByGenres(generes);
+    }
+  }
+
+
+  public searchMovieByGenres(generes: string) {
+    this.homeService.searchMovieByGenres(generes, 0, 20).subscribe(
+      (data) => {
+        this.movies = data as Root;
+        this.length = this.movies.totalElements;
+      },
+      (error) => {
+        if (error.status === 200) {
+        } else if (error.status == 401) {
+          alert('session expired');
+          this.router.navigate(['/']);
+        }
+      }
+    )
+  }
+
+
 
 
 

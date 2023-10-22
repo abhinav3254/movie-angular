@@ -36,4 +36,13 @@ export class HomeService {
     return this.http.get(url, { headers: headers });
   }
 
+  public searchMovieByGenres(genres: string, page: number, size: number): Observable<any> {
+    const url = 'http://localhost:9091/movie/genres/' + genres + '?page=' + page + '&size=' + size;
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ` + localStorage.getItem('token'),
+    });
+    return this.http.get(url, { headers: headers });
+  }
+
 }
