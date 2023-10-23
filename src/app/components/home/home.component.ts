@@ -98,12 +98,14 @@ export class HomeComponent implements OnInit {
 
     this.getAllMovies();
 
+    // This code is for search bar
+
     // for search bar
     // Subscribe to changes in the search text
     this.dataSharingService.searchText$.subscribe((text) => {
       this.searchText = text;
       // console.log('from home search will be :- ' + this.searchText)
-      this.homeService.searchMovie(this.searchText, 0, 20).subscribe(
+      this.homeService.searchMovieByTitle(this.searchText, 0, 20).subscribe(
         (data) => {
           this.movies = data as Root;
           // Set the 'length' property to 'pagesize_api' after data loads.
