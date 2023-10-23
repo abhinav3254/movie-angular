@@ -1,2 +1,68 @@
-<p>profile works!</p>
-<p>{{profile|json}}</p>
+<div class="card main-card">
+    <div class="card-body">
+        <div class="make-row">
+            <div class="icon-text">
+                <img src="assets/profile-icons/user-svgrepo-com.svg" alt="">
+                <p class="name">{{profile?.name}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/user-svgrepo-com.svg" alt="">
+                <p class="username">{{profile?.username}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/email-svgrepo-com.svg" alt="">
+                <p class="email">{{profile?.email}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/gender-svgrepo-com.svg" alt="">
+                <p class="gender">{{profile?.gender}}</p>
+            </div>
+
+
+        </div>
+        <div class="make-row">
+            <div class="icon-text">
+                <img src="assets/profile-icons/phone-calling-rounded-svgrepo-com.svg" alt="">
+                <p class="phone">{{profile?.phone}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/login-svgrepo-com.svg" alt="">
+                <p class="lastLogIn">{{profile?.lastLogIn|date}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/login-svgrepo-com.svg" alt="">
+                <p class="registerDate">{{profile?.registerDate|date}}</p>
+            </div>
+            <div class="icon-text">
+                <img src="assets/profile-icons/birth-svgrepo-com.svg" alt="">
+                <p class="dateOfBirth">{{profile?.dateOfBirth|date}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="center-it">
+        <button type="button" class="btn btn-success" (click)="openDialog()">Update</button>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Log
+            Out</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h2 class="modal-title" id="exampleModalLabel">{{profile?.username}}</h2> -->
+                <img style="width: 2rem;height: 2rem;" src="assets/profile-icons/sad-circle-svgrepo-com.svg" alt="">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you certain you wish to log out?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Yes</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileService } from './profile.service';
 import { Router } from '@angular/router';
+import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-profile',
@@ -11,7 +13,9 @@ export class ProfileComponent implements OnInit {
 
   profile: Profile | undefined;
 
-  constructor(private profileService: ProfileService, private router: Router) { }
+  constructor(private profileService: ProfileService, private router: Router,
+    public dialog: MatDialog
+  ) { }
 
   ngOnInit(): void {
     this.profileService.getProfile().subscribe(
@@ -26,6 +30,15 @@ export class ProfileComponent implements OnInit {
         }
       }
     )
+  }
+
+  // profile dialog
+  openDialog() {
+    const dialogRef = this.dialog.open(ProfileDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
   }
 }
 

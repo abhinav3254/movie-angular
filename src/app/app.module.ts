@@ -20,6 +20,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
 import { ProfileComponent } from './components/profile/profile.component';
+import { MatCardModule } from '@angular/material/card';
+import { ProfileDialogComponent } from './components/profile/profile-dialog/profile-dialog.component';
 
 
 
@@ -32,7 +34,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     SpinnerComponent,
     DialogComponent,
     CarouselComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProfileDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     MatDialogModule,
     MatPaginatorModule,
     MatChipsModule,
-    MatRadioModule
+    MatRadioModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
