@@ -19,6 +19,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatRadioModule } from '@angular/material/radio';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -30,7 +31,8 @@ import { MatRadioModule } from '@angular/material/radio';
     HomeComponent,
     SpinnerComponent,
     DialogComponent,
-    CarouselComponent
+    CarouselComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
