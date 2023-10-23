@@ -18,6 +18,11 @@
                 <p class="gender">{{profile?.gender}}</p>
             </div>
 
+            <div class="icon-text" *ngIf="profile?.status">
+                <img src="assets/profile-icons/double-tick-svgrepo-com.svg" alt="">
+                <p class="gender">Active</p>
+            </div>
+
 
         </div>
         <div class="make-row">
