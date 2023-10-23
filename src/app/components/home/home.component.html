@@ -6,15 +6,15 @@
     <!-- for year -->
 
     <div class="card radio-card">
-        <!-- <label id="example-radio-group-label">Pick your favorite season</label> -->
-        <mat-radio-group aria-labelledby="example-radio-group-label"
-            class="example-radio-group example-radio-group-custom" [(ngModel)]="favoriteYear">
-            <mat-radio-button class="example-radio-button example-radio-button-custom" *ngFor="let year of years"
-                [value]="year" (change)="clickedRadio(year)">
-                {{year}}
-            </mat-radio-button>
-        </mat-radio-group>
-        <!-- <div>Your favorite year is: {{favoriteYear}}</div> -->
+        <!-- new updated checkbox fix this one abhinav -->
+        <div class="form-check" *ngFor="let year of yearsBoot">
+            <input class="form-check-input" type="checkbox" [value]="year" id="flexCheckDefault"
+                [(ngModel)]="year.selected" (change)="clickedRadioBootStrap(year)">
+            <label class="form-check-label" for="flexCheckDefault">
+                {{year.year}}
+            </label>
+        </div>
+
         <hr>
 
         <mat-radio-group aria-labelledby="example-radio-group-label"

@@ -14,16 +14,38 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
-  // for year
-  favoriteYear: string = '';
-  years: string[] = ['all', '2020', '2021', '2022', '2023'];
+  // for year check box
+  yearsBoot = [
+    { year: '2020', selected: false },
+    { year: '2021', selected: false },
+    { year: '2022', selected: false },
+    { year: '2023', selected: false },
+  ];
+  clickedRadioBootStrap(selectedYear: any) {
+    // Toggle the selected state for the clicked checkbox
+    selectedYear.selected = selectedYear.selected;
 
-  clickedRadio(year: string) {
-    if (year.match('all')) {
-      this.getAllMovies();
-    } else {
-      this.getMovieByYear(year);
+    // Unselect all other checkboxes except the clicked one
+    for (const year of this.yearsBoot) {
+      if (year !== selectedYear) {
+        year.selected = false;
+      }
     }
+
+    // If the clicked checkbox is now unselected, reset the selection
+    if (!selectedYear.selected) {
+      selectedYear = null;
+    }
+
+    console.log(`Selected year: ${selectedYear ? selectedYear.year : 'None'}`);
+
+    if (selectedYear) {
+      // alert(`Selected year: ${selectedYear.year}`);
+      this.getMovieByYear(selectedYear.year);
+    } else {
+      this.getAllMovies();
+    }
+
   }
 
   // for generes
@@ -105,20 +127,24 @@ export class HomeComponent implements OnInit {
     this.dataSharingService.searchText$.subscribe((text) => {
       this.searchText = text;
       // console.log('from home search will be :- ' + this.searchText)
-      this.homeService.searchMovieByTitle(this.searchText, 0, 20).subscribe(
-        (data) => {
-          this.movies = data as Root;
-          // Set the 'length' property to 'pagesize_api' after data loads.
-          this.length = this.movies.totalElements;
-        },
-        (error) => {
-          if (error.status === 200) {
-          } else if (error.status == 401) {
-            alert('session expired');
-            this.router.navigate(['/']);
+      if (this.searchText.length == 0) {
+        this.getAllMovies();
+      } else {
+        this.homeService.searchMovieByTitle(this.searchText, 0, 20).subscribe(
+          (data) => {
+            this.movies = data as Root;
+            // Set the 'length' property to 'pagesize_api' after data loads.
+            this.length = this.movies.totalElements;
+          },
+          (error) => {
+            if (error.status === 200) {
+            } else if (error.status == 401) {
+              alert('session expired');
+              this.router.navigate(['/']);
+            }
           }
-        }
-      )
+        )
+      }
     });
   }
 
