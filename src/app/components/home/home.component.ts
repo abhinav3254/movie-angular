@@ -14,6 +14,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
+  // --------------- For sorting with year
+
   // for year check box
   yearsBoot = [
     { year: '2020', selected: false },
@@ -47,6 +49,9 @@ export class HomeComponent implements OnInit {
     }
 
   }
+
+
+  // ------------- For generes sorting
 
   // for generes
   favoriteGenres: string = '';
@@ -83,6 +88,11 @@ export class HomeComponent implements OnInit {
       this.searchMovieByGenres(generes);
     }
   }
+
+
+
+  // ----------------- searchMovies
+  // @author @abhinav3254
 
 
   public searchMovieByGenres(generes: string) {
