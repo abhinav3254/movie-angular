@@ -22,6 +22,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ProfileComponent } from './components/profile/profile.component';
 import { MatCardModule } from '@angular/material/card';
 import { ProfileDialogComponent } from './components/profile/profile-dialog/profile-dialog.component';
+import { PasswordChangeComponent } from './components/profile/password-change/password-change.component';
 
 
 
@@ -35,7 +36,8 @@ import { ProfileDialogComponent } from './components/profile/profile-dialog/prof
     DialogComponent,
     CarouselComponent,
     ProfileComponent,
-    ProfileDialogComponent
+    ProfileDialogComponent,
+    PasswordChangeComponent
   ],
   imports: [
     BrowserModule,

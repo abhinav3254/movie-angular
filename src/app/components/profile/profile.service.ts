@@ -18,4 +18,13 @@ export class ProfileService {
     return this.http.get(url, { headers: headers });
   }
 
+  public changePassword(password: any): Observable<any> {
+    const url = 'http://localhost:9091/user/changePassword';
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ` + localStorage.getItem('token'),
+    });
+    return this.http.post(url, password, { headers: headers });
+  }
+
 }

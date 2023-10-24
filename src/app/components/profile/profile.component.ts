@@ -3,6 +3,7 @@ import { ProfileService } from './profile.service';
 import { Router } from '@angular/router';
 import { ProfileDialogComponent } from './profile-dialog/profile-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { PasswordChangeComponent } from './password-change/password-change.component';
 
 @Component({
   selector: 'app-profile',
@@ -35,6 +36,14 @@ export class ProfileComponent implements OnInit {
   // profile dialog
   openDialog() {
     const dialogRef = this.dialog.open(ProfileDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      // console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openPasswordChangeDialog() {
+    const dialogRef = this.dialog.open(PasswordChangeComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       // console.log(`Dialog result: ${result}`);
