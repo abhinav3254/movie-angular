@@ -26,6 +26,7 @@
 
 .below-carousel {
     width: 80%;
+    margin: 1rem;
 }
 
 .radio-card {
@@ -74,6 +75,16 @@
 
     .radio-card {
         margin: 0.5rem 1rem;
+        width: auto;
+    }
+
+    .below-carousel {
+        width: 80%;
+        margin: 0.5rem auto;
+    }
+
+    .text-center {
+        margin: auto;
         width: auto;
     }
 
