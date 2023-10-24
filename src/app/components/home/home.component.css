@@ -30,8 +30,7 @@
 
 .radio-card {
     margin: 1rem 2rem;
-    min-width: 15%;
-    max-width: 20%;
+    width: auto;
 }
 
 .example-radio-group-custom {
@@ -63,5 +62,19 @@
 .form-check {
     margin: 0.5rem;
     font-size: 1rem;
+}
+
+/* responsive */
+
+@media screen and (max-width: 600px) {
+    .form-check {
+        margin: 0.2rem;
+        font-size: 0.6rem;
+    }
+
+    .radio-card {
+        margin: 0.5rem 1rem;
+        width: auto;
+    }
 
 }
