@@ -56,7 +56,6 @@ export class HomeComponent implements OnInit {
 
 
   movieGenresList = [
-    { genre: 'All', selected: false },
     { genre: 'Action', selected: false },
     { genre: 'Adventure', selected: false },
     { genre: 'Animation', selected: false },

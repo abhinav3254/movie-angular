@@ -17,7 +17,7 @@
 
         <hr>
 
-        <div class="form-check" *ngFor="let genres of movieGenresList">
+        <div class="form-check genre-div" *ngFor="let genres of movieGenresList">
             <input class="form-check-input" type="checkbox" [value]="genres" id="flexCheckDefault"
                 [(ngModel)]="genres.selected" (change)="clickedRadioGenres(genres)">
             <label class="form-check-label" for="flexCheckDefault">
