@@ -17,13 +17,13 @@
 
         <hr>
 
-        <mat-radio-group aria-labelledby="example-radio-group-label"
-            class="example-radio-group example-radio-group-custom" [(ngModel)]="favoriteGenres">
-            <mat-radio-button class="example-radio-button example-radio-button-custom"
-                *ngFor="let genres of movieGenres" [value]="genres" (change)="clickedRadioGenres(genres)">
-                {{genres}}
-            </mat-radio-button>
-        </mat-radio-group>
+        <div class="form-check" *ngFor="let genres of movieGenresList">
+            <input class="form-check-input" type="checkbox" [value]="genres" id="flexCheckDefault"
+                [(ngModel)]="genres.selected" (change)="clickedRadioGenres(genres)">
+            <label class="form-check-label" for="flexCheckDefault">
+                {{genres.genre}}
+            </label>
+        </div>
     </div>
 
     <div class="card below-carousel">

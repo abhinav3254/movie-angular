@@ -47,47 +47,70 @@ export class HomeComponent implements OnInit {
     } else {
       this.getAllMovies();
     }
-
   }
 
 
   // ------------- For generes sorting
 
   // for generes
-  favoriteGenres: string = '';
-  movieGenres = [
-    "All",
-    "Action",
-    "Adventure",
-    "Animation",
-    "Comedy",
-    "Crime",
-    "Drama",
-    "Fantasy",
-    "Horror",
-    "Mystery",
-    "Romance",
-    "Science Fiction",
-    "Thriller",
-    "Family",
-    "Western",
-    "Historical",
-    "War",
-    "Music",
-    "Documentary",
-    "Superhero",
-    "Fantasy Adventure"
+
+
+  movieGenresList = [
+    { genre: 'All', selected: false },
+    { genre: 'Action', selected: false },
+    { genre: 'Adventure', selected: false },
+    { genre: 'Animation', selected: false },
+    { genre: 'Comedy', selected: false },
+    { genre: 'Crime', selected: false },
+    { genre: 'Drama', selected: false },
+    { genre: 'Fantasy', selected: false },
+    { genre: 'Horror', selected: false },
+    { genre: 'Mystery', selected: false },
+    { genre: 'Romance', selected: false },
+    { genre: 'Science Fiction', selected: false },
+    { genre: 'Thriller', selected: false },
+    { genre: 'Family', selected: false },
+    { genre: 'Western', selected: false },
+    { genre: 'Historical', selected: false },
+    { genre: 'War', selected: false },
+    { genre: 'Music', selected: false },
+    { genre: 'Documentary', selected: false },
+    { genre: 'Superhero', selected: false },
+    { genre: 'Fantasy Adventure', selected: false },
+    { genre: 'Musical', selected: false },
+    { genre: 'Biography', selected: false },
+    { genre: 'Sport', selected: false },
+    { genre: 'Sci-Fi', selected: false },
+    { genre: 'Western', selected: false },
+    { genre: 'Action-Adventure', selected: false },
+    { genre: 'Fantasy-Comedy', selected: false },
+    { genre: 'Crime-Drama', selected: false },
+    { genre: 'Historical-War', selected: false },
+    { genre: 'Romantic Comedy', selected: false },
   ];
 
+  clickedRadioGenres(selectedGenre: any) {
+    // Toggle the selected state for the clicked radio button
+    selectedGenre.selected = selectedGenre.selected;
 
-  clickedRadioGenres(generes: string) {
-    // console.log(generes);
-    if (generes.match('All')) {
-      this.getAllMovies();
+    // Unselect all other radio buttons except the clicked one
+    for (const genre of this.movieGenresList) {
+      if (genre !== selectedGenre) {
+        genre.selected = false;
+      }
+    }
+
+    // console.log(`Selected genre: ${selectedGenre.selected ? selectedGenre.genre : 'None'}`);
+
+    if (selectedGenre.selected) {
+      // Perform some action when a genre is selected
+      this.searchMovieByGenres(selectedGenre.genre);
     } else {
-      this.searchMovieByGenres(generes);
+      // Perform some action when no genre is selected
+      this.getAllMovies();
     }
   }
+
 
 
 
