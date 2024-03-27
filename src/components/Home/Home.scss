@@ -3,6 +3,98 @@
         width: 100vw;
         height: 100vh;
         background-image: url('../../images/pirates.jpeg');
+        // background-image: url('https://w.forfun.com/fetch/f4/f40b69329f9e691e15522f52dfbfcea5.jpeg?download=movie-avatar-352099.jpeg');
         background-position: center;
+        background-size: contain;
+
+
+        .homeImageinfo {
+            position: absolute;
+            left: 10%;
+            top: 20%;
+            padding: 20px;
+            width: 40%;
+
+            .homeImageinfo-1 {
+                color: #476ba5;
+                margin: 0;
+            }
+
+            .homeImageinfo-heading {
+                font-size: 50px;
+                margin: 0;
+                color: white;
+                font-weight: 800;
+            }
+
+            .homeImageinfo-desc {
+                color: white;
+                font-size: 18px;
+            }
+
+            .homeImageinfo-details {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                width: 50%;
+
+                .homeImageinfo-details-time {
+                    color: white;
+                }
+
+                .homeImageinfo-details-age {
+                    color: white;
+                    border: 1px dotted white;
+                    padding: 10px 20px;
+                }
+
+                .homeImageinfo-details-year {
+                    color: white;
+                }
+
+                .homeImageinfo-border {
+                    border-left: 1px solid white;
+                    height: 20px;
+                }
+            }
+            .homeImageinfo-book-tickets {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 10px;
+
+                .homeImageinfo-book-tickets-row {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    background-color: #FFD93D;
+                    padding: 10px 20px;
+                    border-radius: 20px;
+
+                    .homeImageinfo-book-tickets-row-playSvg {
+                        width: 20px;
+                        height: 20px;
+                        margin: 2px;
+                    }
+                    // FFD93D
+
+                    .homeImageinfo-book-tickets-row-playText {
+                        color: black;
+                        margin: 2px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                }
+            }
+        }
+        
     }
 }
+
+
