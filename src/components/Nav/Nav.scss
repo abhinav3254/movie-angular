@@ -1,0 +1,54 @@
+.Nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    position: fixed;
+    background-color: white;
+
+    .NavRight {
+        .NavRightUl {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            list-style: none;
+
+            .NavRightLi {
+                padding: 5px 20px;
+                margin: 0 5px;
+                font-weight: 500;
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .NavRightSearch {
+        border: 1px solid black;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+
+        .NavRightSearchInput {
+            border: none;
+            outline: none;
+        }
+
+        .NavRightSearchIcon {
+            width: 20px;
+            height: 20px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
