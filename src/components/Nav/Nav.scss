@@ -3,10 +3,9 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+    // box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: fixed;
-    background-color: white;
 
     .NavRight {
         .NavRightUl {
@@ -20,6 +19,7 @@
                 padding: 5px 20px;
                 margin: 0 5px;
                 font-weight: 500;
+                color: white;
 
                 &:hover {
                     cursor: pointer;
@@ -29,7 +29,7 @@
     }
 
     .NavRightSearch {
-        border: 1px solid black;
+        border: 1px solid white;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -39,6 +39,12 @@
         .NavRightSearchInput {
             border: none;
             outline: none;
+            background-color: #13151c;
+            color: white;
+
+            &::placeholder {
+                color: white;
+            }
         }
 
         .NavRightSearchIcon {

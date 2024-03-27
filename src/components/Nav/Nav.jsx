@@ -21,6 +21,7 @@ function Nav() {
                 <input className='NavRightSearchInput' type="text" placeholder='search...' />
                 <img className='NavRightSearchIcon' src={searchIcon} alt="" />
             </div>
+
         </div>
     )
 }
