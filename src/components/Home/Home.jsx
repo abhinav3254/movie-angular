@@ -4,6 +4,7 @@ import './Home.scss'
 import playSvg from '../../images/play.svg'
 import tcktSvg from '../../images/ticket.svg'
 import MovieContainer from './MovieConatiner/MovieContainer'
+import movies from '../../json/movies.json'
 
 function Home() {
     return (
@@ -34,7 +35,14 @@ function Home() {
                 </div>
             </div>
 
-            <MovieContainer />
+            <div className="MoviesGrid">
+                {
+                    movies.map((movie, key) => (
+                        <MovieContainer singleMovie={movie} key={key} />
+                    ))
+                }
+            </div>
+
         </div>
     )
 }
