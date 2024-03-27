@@ -3,9 +3,11 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
-    // box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
     width: 100%;
     position: fixed;
+    background-color: #13151c;
+    z-index: 1;
+
 
     .NavRight {
         .NavRightUl {
@@ -54,6 +56,12 @@
             &:hover {
                 cursor: pointer;
             }
+        }
+    }
+
+    .sidebar-icon {
+        &:hover {
+            cursor: pointer;
         }
     }
 }
