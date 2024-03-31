@@ -21,8 +21,8 @@ function MovieContainer({ singleMovie }) {
     }
 
     const movieDetails = (movie) => {
-        console.log(`movie clicked :- ${JSON.stringify(movie)}`);
-        navigate('/detail/:id');
+        console.log(`movie clicked :- ${movie.id}`);
+        navigate(`/detail/${movie.id}`);
     }
 
     return (

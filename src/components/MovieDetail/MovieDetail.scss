@@ -80,5 +80,31 @@
         .OtherDetailsPlot {
             font-size: 12px;
         }
+
+        .AwardSection {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            margin: 10px 0;
+
+            .AwardSectionLogo {
+                width: 20px;
+                height: 20px;
+            }
+
+            .AwardSectionAwards {
+                margin-left: 10px;
+                font-size: 12px;
+            }
+        }
+
+        .AwardSectionRow {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
     }
+
+
 }
