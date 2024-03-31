@@ -21,7 +21,7 @@ function MovieContainer({ singleMovie }) {
     }
 
     const movieDetails = (movie) => {
-        console.log(`movie clicked :- ${movie.id}`);
+        // console.log(`movie clicked :- ${movie.id}`);
         navigate(`/detail/${movie.id}`);
     }
 

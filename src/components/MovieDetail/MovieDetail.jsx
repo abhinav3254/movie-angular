@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, suseEffect, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import './MovieDetail.scss'
 import ticketSvg from '../../images/ticket.svg'
@@ -6,17 +6,28 @@ import moviesJson from '../../json/movies.json'
 import awardSvg from '../../images/award.svg'
 import thumbsUpSvg from '../../images/thumbsup.svg'
 import starSvg from '../../images/star.svg'
+import { findById } from './FindMovieById';
 
 
 function MovieDetail() {
     const { id } = useParams();
+    const [movie, setMovie] = useState('');
 
     // loading movie from the JSON file
-    const movie = moviesJson.find(movie => movie.id === parseInt(id));
+    // const movie = moviesJson.find(movie => movie.id === parseInt(id));
 
-    if (!movie) {
-        return <div>Movie not found</div>;
-    }
+    useEffect(() => {
+        const fetchMovie = async () => {
+            try {
+                const movieData = await findById(id);
+                setMovie(movieData);
+            } catch (error) {
+                console.error('Error fetching movie:', error);
+            }
+        };
+        fetchMovie();
+    }, [id]);
+
 
     return (
         <div className='MovieDetail'>
@@ -54,7 +65,8 @@ function MovieDetail() {
 
                     <div className="AwardSection">
                         <img className='AwardSectionLogo' src={thumbsUpSvg} alt="" />
-                        <p className='AwardSectionAwards'>{movie.metascore}</p>
+                        <p className='AwardSectionAwards'>Meta Score </p>
+                        <p className='AwardSectionAwards'>{movie.metaScore}</p>
                     </div>
                     <div className="AwardSection">
                         <img className='AwardSectionLogo' src={starSvg} alt="" />
