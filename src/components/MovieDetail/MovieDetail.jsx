@@ -19,6 +19,19 @@ function MovieDetail() {
                     </div>
                 </div>
             </div>
+
+            <div className="OtherDetails">
+                <p className='OtherDetailsPlot'>
+                    A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.
+                </p>
+                <p>casts</p>
+                <ul>
+                    <li>Sam Worthington</li>
+                    <li>Zoe Saldana</li>
+                    <li>Sigourney Weaver</li>
+                    <li>Stephen Lang</li>
+                </ul>
+            </div>
         </div>
     )
 }
