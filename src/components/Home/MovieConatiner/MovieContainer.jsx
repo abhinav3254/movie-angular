@@ -1,8 +1,12 @@
 import React from 'react'
 import './MovieContainer.scss'
 import startSvg from '../../../images/star.svg'
+import { Link, useNavigate } from 'react-router-dom';
+
 
 function MovieContainer({ singleMovie }) {
+    const navigate = useNavigate();
+
 
     const checkSize = (text) => {
         if (text.length > 10) {
@@ -16,21 +20,26 @@ function MovieContainer({ singleMovie }) {
         return text;
     }
 
+    const movieDetails = (movie) => {
+        console.log(`movie clicked :- ${JSON.stringify(movie)}`);
+        navigate('/detail/:id');
+    }
+
     return (
-        <div className='MovieContainer'>
-            <img className='MovieContainerPoster' src={singleMovie.Images[0]} alt="" />
+        <div className='MovieContainer' onClick={() => movieDetails(singleMovie)}>
+            <img className='MovieContainerPoster' src={singleMovie.poster} alt="" />
             <div className="MovieContainerBottom">
-                <p className='MovieContainerName'>{sizeReducer(singleMovie.Title)}</p>
+                <p className='MovieContainerName'>{sizeReducer(singleMovie.title)}</p>
                 <div className='MovieContainerConatiner'>
-                    <p className='MovieContainerConatinerYear'>{singleMovie.Year}</p>
-                    <p className='MovieContainerConatinerCategory'>{checkSize(singleMovie.Genre)}</p>
-                    <p className='MovieContainerConatinerRuntime'>{singleMovie.Runtime}</p>
+                    <p className='MovieContainerConatinerYear'>{singleMovie.year}</p>
+                    <p className='MovieContainerConatinerCategory'>{checkSize(singleMovie.genre)}</p>
+                    <p className='MovieContainerConatinerRuntime'>{singleMovie.runtime}</p>
                 </div>
                 <div className='MovieContainerConatiner'>
                     <p className='MovieContainerConatinerBtn'>Get Ticket</p>
                     <div className="MovieContainerConatinerRating">
                         <img className='MovieContainerConatinerRatingImg' src={startSvg} alt="" />
-                        <p className='MovieContainerConatinerRatingNumber'>4.98</p>
+                        <p className='MovieContainerConatinerRatingNumber'>{singleMovie.imdbRating}</p>
                     </div>
                 </div>
             </div>
