@@ -15,7 +15,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Auth />} />
         <Route path='/home' element={<Home />} />
-        <Route path='/detail' element={<MovieDetail />} />
+        <Route path='/detail/:id' element={<MovieDetail />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </>
