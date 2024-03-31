@@ -1,12 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Nav from '../Nav/Nav'
 import './Home.scss'
 import playSvg from '../../images/play.svg'
 import tcktSvg from '../../images/ticket.svg'
 import MovieContainer from './MovieConatiner/MovieContainer'
-import movies from '../../json/movies.json'
+import { Paginator } from 'primereact/paginator';
+
+import axios from "axios"
+import { getAllMovies } from './MovieApi'
 
 function Home() {
+    const [movies, setMovies] = useState([]);
+
+    const [page, setPage] = useState(0);
+    const [size, setSize] = useState(5);
+    const [totalRecords, setTotalRecords] = useState(0);
+
+    const onPageChange = (event) => {
+        setPage(event.page);
+        setSize(event.rows);
+        fetchData(event.page, event.rows);
+    };
+
+
+    useEffect(() => {
+        fetchData(page, size);
+    }, [page, size]);
+
+    const fetchData = async (page, size) => {
+        try {
+            const data = await getAllMovies(page, size);
+            setMovies(data.content);
+            setTotalRecords(data.totalElements);
+        } catch (error) {
+            console.error('Error fetching movies:', error);
+        }
+    };
+
+
     return (
         <div className='Home'>
             {/* <Nav /> */}
@@ -42,6 +73,8 @@ function Home() {
                     ))
                 }
             </div>
+
+            <Paginator first={page} rows={size} totalRecords={totalRecords} rowsPerPageOptions={[5, 10]} onPageChange={onPageChange} className='HomePaginator' />
 
         </div>
     )

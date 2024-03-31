@@ -19,8 +19,8 @@
         "imdbRating": "7.9",
         "imdbVotes": "890,617",
         "imdbID": "tt0499549",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 2,
@@ -42,8 +42,8 @@
         "imdbRating": "7.2",
         "imdbVotes": "533,874",
         "imdbID": "tt0480249",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 3,
@@ -65,8 +65,8 @@
         "imdbRating": "7.7",
         "imdbVotes": "611,046",
         "imdbID": "tt0416449",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 4,
@@ -88,8 +88,8 @@
         "imdbRating": "8.1",
         "imdbVotes": "1,003,301",
         "imdbID": "tt0848228",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 5,
@@ -111,8 +111,8 @@
         "imdbRating": "8.2",
         "imdbVotes": "786,985",
         "imdbID": "tt0993846",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 6,
@@ -134,8 +134,8 @@
         "imdbRating": "8.6",
         "imdbVotes": "937,412",
         "imdbID": "tt0816692",
-        "Type": "movie",
-        "Response": "True"
+        "type": "movie",
+        "response": "True"
     },
     {
         "id": 7,
@@ -157,8 +157,8 @@
         "imdbRating": "9.5",
         "imdbVotes": "1,046,830",
         "imdbID": "tt0944947",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "7"
     },
     {
@@ -181,8 +181,8 @@
         "imdbRating": "8.6",
         "imdbVotes": "198,041",
         "imdbID": "tt2306299",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "5"
     },
     {
@@ -205,8 +205,8 @@
         "imdbRating": "8.0",
         "imdbVotes": "133,375",
         "imdbID": "tt3749900",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "3"
     },
     {
@@ -229,8 +229,8 @@
         "imdbRating": "8.0",
         "imdbVotes": "14,770",
         "imdbID": "tt3281796",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "3"
     },
     {
@@ -253,8 +253,8 @@
         "imdbRating": "8.9",
         "imdbVotes": "118,680",
         "imdbID": "tt2707408",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "2"
     },
     {
@@ -277,8 +277,8 @@
         "imdbRating": "9.5",
         "imdbVotes": "889,883",
         "imdbID": "tt0903747",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "5"
     },
     {
@@ -301,8 +301,8 @@
         "imdbRating": "N\/A",
         "imdbVotes": "N\/A",
         "imdbID": "tt1211837",
-        "Type": "movie",
-        "Response": "True",
+        "type": "movie",
+        "response": "True",
         "ComingSoon": true
     },
     {
@@ -325,8 +325,8 @@
         "imdbRating": "N\/A",
         "imdbVotes": "N\/A",
         "imdbID": "tt3748528",
-        "Type": "movie",
-        "Response": "True",
+        "type": "movie",
+        "response": "True",
         "ComingSoon": true
     },
     {
@@ -349,8 +349,8 @@
         "imdbRating": "N\/A",
         "imdbVotes": "N\/A",
         "imdbID": "tt2094766",
-        "Type": "movie",
-        "Response": "True",
+        "type": "movie",
+        "response": "True",
         "ComingSoon": true
     },
     {
@@ -373,8 +373,8 @@
         "imdbRating": "N\/A",
         "imdbVotes": "N\/A",
         "imdbID": "tt3322314",
-        "Type": "series",
-        "Response": "True",
+        "type": "series",
+        "response": "True",
         "totalSeasons": "1",
         "ComingSoon": true
     }
