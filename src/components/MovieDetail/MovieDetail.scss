@@ -1,0 +1,74 @@
+.MovieDetail {
+    p {
+        margin: 0;
+        padding: 0;
+    }
+    .MovieDetailHeader {
+        padding: 100px 20px 20px 20px;
+        display: flex;
+        flex-direction: row;
+        background-color: #181b20;
+        margin: 0 20px;
+        border-radius: 5px;
+
+        
+        .MoviePoster {
+            width: 280px;
+            height: 400px;
+            object-fit: cover;
+        }
+    
+        .HeaderLeft {
+            margin: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+    
+            .HeaderMovieTitle {
+                font-size: 40px;
+            }
+            .HeaderMovieLanguage {
+                font-size: 15px;
+            }
+
+            .HeaderMovieRated {
+                font-size: 20px;
+                border: 1px dotted red;
+                width: fit-content;
+                padding: 10px 20px;
+                margin: 10px 0;
+            }
+
+            .HeaderMovieGenre {
+                font-size: 12px;
+            }
+
+            .HeaderBooking {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                background-color: #FFD93D;
+                padding: 10px 20px;
+                border-radius: 40px;
+                margin: 10px 0;
+                width: fit-content;
+
+                .HeaderBookingImg {
+                    width: 40px;
+                    height: 30px;
+                    margin-right: 5px;
+                }
+
+                .HeaderBookTicketText {
+                    font-size: 12px;
+                    color: black;
+                }
+
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

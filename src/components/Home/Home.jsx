@@ -9,7 +9,7 @@ import movies from '../../json/movies.json'
 function Home() {
     return (
         <div className='Home'>
-            <Nav />
+            {/* <Nav /> */}
             <div className="homeImage">
                 <div className="homeImageinfo">
                     <p className='homeImageinfo-1'>Exclusive Show(Experience in 3D)</p>
