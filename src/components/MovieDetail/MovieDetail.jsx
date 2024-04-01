@@ -31,20 +31,24 @@ function MovieDetail() {
 
     return (
         <div className='MovieDetail'>
-            <div className="MovieDetailHeader">
-                <img className='MoviePoster' src={movie.poster} alt="" />
-                <div className="HeaderLeft">
-                    <p className='HeaderMovieTitle'>{movie.title}</p>
-                    <p className='HeaderMovieLanguage'>{movie.language}</p>
-                    <p className='HeaderMovieRated'>{movie.rated}</p>
-                    <p className='HeaderMovieGenre'>{movie.genre}</p>
-                    <p className='HeaderDirector'>{movie.director}</p>
-                    <div className="HeaderBooking">
-                        <img className='HeaderBookingImg' src={ticketSvg} alt="" />
-                        <p className='HeaderBookTicketText'>Book Ticket</p>
+            <div className="VideoBackGround">
+                <video className='MovieTrailer' src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" autoPlay muted loop></video>
+                <div className="MovieDetailHeader">
+                    <img className='MoviePoster' src={movie.poster} alt="" />
+                    <div className="HeaderLeft">
+                        <p className='HeaderMovieTitle'>{movie.title}</p>
+                        <p className='HeaderMovieLanguage'>{movie.language}</p>
+                        <p className='HeaderMovieRated'>{movie.rated}</p>
+                        <p className='HeaderMovieGenre'>{movie.genre}</p>
+                        <p className='HeaderDirector'>{movie.director}</p>
+                        <div className="HeaderBooking">
+                            <img className='HeaderBookingImg' src={ticketSvg} alt="" />
+                            <p className='HeaderBookTicketText'>Book Ticket</p>
+                        </div>
                     </div>
                 </div>
             </div>
+
 
             <div className="OtherDetails">
                 <p className='OtherDetailsPlot'>
