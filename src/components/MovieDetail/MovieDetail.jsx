@@ -1,8 +1,7 @@
-import React, { useState, suseEffect, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import './MovieDetail.scss'
 import ticketSvg from '../../images/ticket.svg'
-import moviesJson from '../../json/movies.json'
 import awardSvg from '../../images/award.svg'
 import thumbsUpSvg from '../../images/thumbsup.svg'
 import starSvg from '../../images/star.svg'
@@ -13,9 +12,9 @@ function MovieDetail() {
     const { id } = useParams();
     const [movie, setMovie] = useState('');
 
-    // loading movie from the JSON file
-    // const movie = moviesJson.find(movie => movie.id === parseInt(id));
-
+    /**
+     * API call made here from the FindMovieById.js
+     */
     useEffect(() => {
         const fetchMovie = async () => {
             try {
@@ -51,6 +50,7 @@ function MovieDetail() {
 
 
             <div className="OtherDetails">
+                <p>PLOT</p>
                 <p className='OtherDetailsPlot'>
                     {movie.plot}
                 </p>
