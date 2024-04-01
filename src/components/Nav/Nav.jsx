@@ -4,6 +4,7 @@ import { Button } from 'primereact/button';
 import './Nav.scss'
 import logo from '../../images/logo.svg'
 import searchIcon from '../../images/search.svg'
+import { Link } from 'react-router-dom';
 
 function Nav() {
     const [visibleRight, setVisibleRight] = useState(false);
@@ -12,12 +13,24 @@ function Nav() {
             <img className='NavLogo' src={logo} alt="" />
             <div className="NavRight">
                 <ul className='NavRightUl'>
-                    <li className='NavRightLi'>Home</li>
-                    <li className='NavRightLi'>Showtimes</li>
-                    <li className='NavRightLi'>Our Theatre</li>
-                    <li className='NavRightLi'>Store</li>
-                    <li className='NavRightLi'>About Us</li>
-                    <li className='NavRightLi'>Contact</li>
+                    <li className='NavRightLi'>
+                        <Link to="/home">Home</Link>
+                    </li>
+                    <li className='NavRightLi'>
+                        <Link to="/">Showtimes</Link>
+                    </li>
+                    <li className='NavRightLi'>
+                        <Link to="">Our Theatre</Link>
+                    </li>
+                    <li className='NavRightLi'>
+                        <Link to="">Store</Link>
+                    </li>
+                    <li className='NavRightLi'>
+                        <Link to="">About Us</Link>
+                    </li>
+                    <li className='NavRightLi'>
+                        <Link to="">Contact</Link>
+                    </li>
                 </ul>
             </div>
             <div className="NavRightSearch">
