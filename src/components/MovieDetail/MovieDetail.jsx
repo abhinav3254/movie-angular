@@ -50,11 +50,11 @@ function MovieDetail() {
 
 
             <div className="OtherDetails">
-                <p>PLOT</p>
+                <p className='OtherDetailsTitle'>PLOT</p>
                 <p className='OtherDetailsPlot'>
                     {movie.plot}
                 </p>
-                <p>casts</p>
+                <p className='OtherDetailsTitle'>CAST</p>
                 <p>{movie.actors}</p>
                 <div className="AwardSection">
                     <img className='AwardSectionLogo' src={awardSvg} alt="" />
